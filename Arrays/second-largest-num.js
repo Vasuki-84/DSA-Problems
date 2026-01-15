@@ -6,6 +6,8 @@
 
 // Input : [12,35,1,10,34,1] = [1,1,10,12,34,35]
 
+// Brute force method
+
 function secondLargest(arr) {
   const uniqueArr = Array.from(new Set(arr)); // [10,5]
   uniqueArr.sort((a, b) => b - a); // [10,5]
@@ -15,4 +17,43 @@ function secondLargest(arr) {
     return -1;
   }
 }
-console.log(secondLargest([10,5,10]));
+console.log(secondLargest([10, 5, 10]));
+
+// optimized form
+function secondLargestOptimized(arr) {
+  let largest = Number.NEGATIVE_INFINITY;
+  let secondLargest = Number.NEGATIVE_INFINITY;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
+    } else if (arr[i] != largest && arr[i] > secondLargest) {
+      secondLargest = arr[i];
+    }
+  }
+  return secondLargest;
+}
+console.log(secondLargestOptimized([-3, -2, 3]));
+
+// Third largest number - Leetcode Problem
+function thirdlargest(arr1) {
+  let first = Number.NEGATIVE_INFINITY;
+  let second = Number.NEGATIVE_INFINITY;
+  let third = Number.NEGATIVE_INFINITY;
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] > first) {
+      third = second;
+      second = first;
+      first = arr1[i];
+    } else if (arr1[i] !== first && arr1[i] > second) {
+      third = second;
+      second = arr1[i];
+    } else if (arr1[i] !== first && arr1[i] !== second && arr1[i] > third) {
+      third = arr1[i];
+    }
+  }
+  return third === null ? first : third;
+}
+console.log(thirdlargest([2, 2, 1, 3]));

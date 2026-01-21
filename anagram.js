@@ -35,3 +35,27 @@ const isAnagram1 = (s, t) => {
 };
 console.log(isAnagram1("anagram", "agaram"));
 
+// 
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
+
+  let count = {};
+
+  for (let i = 0; i < s.length; i++) {
+    let ch = s[i];
+    count[ch] = (count[ch] || 0) + 1;
+  }
+
+  for (let i = 0; i < t.length; i++) {
+    let ch = t[i];
+    if (!count[ch]) return false;
+    count[ch]--;
+  }
+
+  return true;
+}
+
+console.log(isAnagram("listen", "silent")); // true 
+
+
+

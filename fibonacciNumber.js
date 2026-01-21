@@ -17,7 +17,7 @@ var fib = function (n) {
 const res = fib(4);
 console.log(res);
 
-// using recurrsion
+// using recursion
 // Recursion = A function calling itself.
 
 // var fib = function (n) {

@@ -1,3 +1,6 @@
+
+
+
 // const revStr = (str) => (str.length === 0 ? "" : revStr(str.slice(1)) + str[0]);
 // console.log(revStr("hello"));
 
@@ -13,5 +16,5 @@ function revStr(str) {
   }
   return result;
 }
-console.log(revStr("hello"));
+console.log(revStr("hell"));
 

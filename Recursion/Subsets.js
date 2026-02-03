@@ -7,7 +7,7 @@
 // Input: [1,2,3]  ouput: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 // Input: [0]  output: [[],[0]]
 
-function subsets(nums,i){
+function subsets(nums){
     let result=[];
     let temp=[];
 
